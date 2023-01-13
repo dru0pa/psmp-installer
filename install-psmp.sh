@@ -1,7 +1,8 @@
 #!/bin/bash
 #This script it to automat the installation of the PSMP server on RHEL /CentOS /ROcky Linux
 #The script will install CyberArk PSMP for 12.x
-#
+#Place script in smame folder as the psmpparms.sample, vault.ini, CARKpsmp
+#Working on the version file names for RPMs
 #Script is written by Andrew 
 #email dru0pa@gmail.com
 echo Setting the IP address of the Vault server
@@ -36,9 +37,9 @@ systemctl stop nscd.service nscd.socket
 systemctl disable nscd.service nscd.socket
 
 echo install CARKpsmp-infra
-rpm -ivh IntegratedMode/CARKpsmp-infra-12.02.0.10.x86_64.rpm
+rpm -ivh IntegratedMode/*.rpm
 echo install CARKpsmp
-rpm -ivh CARKpsmp-12.02.0.10.x86_64.rpm
+rpm -ivh *.rpm
 
 
 echo Clean Up after install
