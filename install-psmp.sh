@@ -37,10 +37,9 @@ systemctl stop nscd.service nscd.socket
 systemctl disable nscd.service nscd.socket
 
 echo install CARKpsmp-infra
-rpm -ivh IntegratedMode/*.rpm
+rpm -ivh IntegratedMode/CARKpsmp-infra-*.rpm
 echo install CARKpsmp
-rpm -ivh *.rpm
-
+rpm -ivh CARKpsmp-*.rpm
 
 echo Clean Up after install
 echo  return vault.ini back to default
@@ -60,3 +59,12 @@ rm -rf user.cred
 rm -rf user.cred.entropy
 echo remove folder.txt
 rm -rf folder.txt
+
+echo Check for the following by scrolling up.
+echo Machine hardening was completed successfully.
+echo Installation process was completed successfully.
+
+echo If not check password and run the following command to uninstall the components listed
+echo rpm -qa | grep CAR
+
+echo Reboot server now if all successfully.
